@@ -3,39 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EPA Feedback Widget</title>
+  <title>EPA Feedback Widget (Small)</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #E8F3FA;
       border: 1px solid #CCE3F0;
-      border-radius: 8px;
+      border-radius: 6px;
       text-align: center;
-      padding: 8px;
-      width: 260px;
-      height: 110px;
+      padding: 5px;
+      width: 180px;
+      height: 80px;
       margin: 0;
+      transform: scale(1);
+      transform-origin: top left;
+    }
+    p {
+      font-size: 10px;
+      margin: 3px 0;
     }
     .count {
       font-weight: 600;
       color: #0079C2;
-      margin: 0 4px;
-      font-size: 14px;
+      margin: 0 3px;
+      font-size: 10px;
     }
     button {
       border: none;
       background: none;
       cursor: pointer;
-      font-size: 22px;
-      margin: 0 6px;
+      font-size: 15px;
+      margin: 0 4px;
       line-height: 1;
     }
     #msg {
       color: #0079C2;
-      font-size: 13px;
+      font-size: 9px;
       font-weight: 500;
       display: none;
-      margin-top: 4px;
+      margin-top: 2px;
     }
   </style>
 </head>
@@ -47,7 +53,7 @@
     <span id="dislikeCount" class="count">0</span>
     <button onclick="sendVote('dislike')">👎</button>
   </div>
-  <p id="msg">Thank you for your feedback!</p>
+  <p id="msg">Thank you!</p>
 
   <script>
     const article = "Walk for Epilepsy 2025";  // Change for each article
