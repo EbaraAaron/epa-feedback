@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EPA Feedback Widget (Small)</title>
+  <title>EPA Feedback Widget</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,11 +15,9 @@
       width: 180px;
       height: 80px;
       margin: 0;
-      transform: scale(1);
-      transform-origin: top left;
     }
     p {
-      font-size: 8px;
+      font-size: 10px;
       margin: 3px 0;
     }
     .count {
@@ -56,9 +54,12 @@
   <p id="msg">Thank you!</p>
 
   <script>
-    const article = "Walk for Epilepsy 2025";  // Change for each article
-    const baseUrl =
-      "https://script.google.com/macros/s/AKfycbz_ig49E_Eza3OU67GymLY1QBzQglooN9_7U95PiHPkltd1ze1MHgXV-mGOhsAAd0EP/exec";
+    // ✅ Get article name dynamically from ?article= query parameter
+    const params = new URLSearchParams(window.location.search);
+    const article = params.get("article") || "Untitled";
+
+    // ✅ Your live Apps Script endpoint (unchanged)
+    const baseUrl = "https://script.google.com/macros/s/AKfycbz_ig49E_Eza3OU67GymLY1QBzQglooN9_7U95PiHPkltd1ze1MHgXV-mGOhsAAd0EP/exec";
 
     function updateCounts() {
       fetch(baseUrl + "?article=" + encodeURIComponent(article) + "&vote=counts")
@@ -81,4 +82,3 @@
   </script>
 </body>
 </html>
-
